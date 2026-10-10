@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8osy4ia26v7q"]
+
+[ext_resource type="Script" uid="uid://bxfbi0qiaexum" path="res://Hongo.gd" id="1_fe5bt"]
+[ext_resource type="Texture2D" uid="uid://dbg8i3keyvl00" path="res://aparte/tilemap/spritesheet_tiles.png" id="2_pqcfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 35.057095
+
+[node name="hongo" type="CharacterBody2D" unique_id=581699366]
+collision_mask = 7
+slide_on_ceiling = false
+script = ExtResource("1_fe5bt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2005464260]
+position = Vector2(513, 395)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="SpritesheetTiles" type="Sprite2D" parent="." unique_id=1453740252]
+position = Vector2(513, 392)
+scale = Vector2(0.91558444, 1.078125)
+texture = ExtResource("2_pqcfx")
+region_enabled = true
+region_rect = Rect2(538.0438, 834.43896, 77.47638, 64.44104)

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dru00q7cdjapd"]
+
+[ext_resource type="Script" uid="uid://cb47lb5l2cdts" path="res://rigid_body_2d.gd" id="1_r8vkm"]
+[ext_resource type="Texture2D" uid="uid://dn3tx2sy76bl1" path="res://weapon_gun.png" id="2_my55k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag3k0"]
+size = Vector2(11, 5)
+
+[node name="Bala" type="RigidBody2D" unique_id=949335609]
+collision_layer = 15
+collision_mask = 7
+gravity_scale = 0.0
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_r8vkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=288683113]
+shape = SubResource("RectangleShape2D_ag3k0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1139743268]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_my55k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4043i01t8sim"]
+
+[ext_resource type="Script" uid="uid://bu3astrojgfvm" path="res://puerta.gd" id="1_8gvf5"]
+[ext_resource type="Texture2D" uid="uid://dbg8i3keyvl00" path="res://aparte/tilemap/spritesheet_tiles.png" id="2_1h0p7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8gvf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufeg8"]
+size = Vector2(126, 95)
+
+[node name="Puerta" type="AnimatableBody2D" unique_id=262680511]
+physics_material_override = SubResource("PhysicsMaterial_8gvf5")
+script = ExtResource("1_8gvf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=520337388]
+texture = ExtResource("2_1h0p7")
+region_enabled = true
+region_rect = Rect2(897.1396, 30.997383, 125.877686, 95.396095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033650341]
+light_mask = 0
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ufeg8")

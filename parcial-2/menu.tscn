@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cyq5v3bgsg5d0"]
+
+[ext_resource type="Texture2D" uid="uid://fvksw5yu2svm" path="res://aparte/Controles retro para comenzar.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://cjsqourtv2fbm" path="res://menu.gd" id="1_ouk20"]
+
+[node name="Menu" type="Node2D" unique_id=48481192]
+script = ExtResource("1_ouk20")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2039917702]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.97811955, 0.8528164, 0.87428325, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=577402559]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 648.0
+texture = ExtResource("1_lti8b")
+expand_mode = 1

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bkcindvkgf3e6"]
+
+[ext_resource type="PackedScene" uid="uid://s54rsrsqbv8d" path="res://personaje.tscn" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://u51s7txnmala" path="res://personaje.gd" id="2_0e48y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y32ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(592, 227)
+
+[node name="Node2D" type="StaticBody2D" unique_id=1610597122]
+physics_material_override = SubResource("PhysicsMaterial_y32ns")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1425685686]
+offset_left = -9.0
+offset_top = -108.0
+offset_right = 581.0
+offset_bottom = 120.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=14974941]
+position = Vector2(286, 6.5)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="CharacterBody2D" parent="." unique_id=463020270 instance=ExtResource("1_wtcfe")]
+position = Vector2(185, -149)
+script = ExtResource("2_0e48y")
+velocidad_bala = 800.0

@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://s54rsrsqbv8d"]
+
+[ext_resource type="Texture2D" uid="uid://cgqxp8ui2ph5l" path="res://ChatGPT Image 3 oct 2026, 05_05_43 p.m. (1).png" id="1_4e5bt"]
+[ext_resource type="Script" uid="uid://u51s7txnmala" path="res://personaje.gd" id="1_ltgau"]
+[ext_resource type="Texture2D" uid="uid://65416se14ai0" path="res://pngwing.com (7).png" id="2_gj0cs"]
+[ext_resource type="Texture2D" uid="uid://chmjkgw8kibeq" path="res://MyPhoto_07_10_2026_0_43_46.png" id="4_35kqm"]
+[ext_resource type="Texture2D" uid="uid://cujuumx0bgyw2" path="res://MyPhoto_07_10_2026_0_33_20.png" id="5_1y5k2"]
+[ext_resource type="Texture2D" uid="uid://cm8heffh22we" path="res://MyPhoto_07_10_2026_0_42_58.png" id="6_f8plh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38t12"]
+size = Vector2(24, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e5bt"]
+atlas = ExtResource("1_4e5bt")
+region = Rect2(100, 5, 589, 941)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yppqc"]
+atlas = ExtResource("1_4e5bt")
+region = Rect2(639, 0, 639, 946)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38t12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e5bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yppqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35kqm"]
+size = Vector2(759.9199, 1139.8799)
+
+[node name="Protagonista" type="CharacterBody2D" unique_id=463020270]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_ltgau")
+
+[node name="Arma" type="Sprite2D" parent="." unique_id=94689731]
+position = Vector2(-15, 5)
+rotation = -1.5707964
+scale = Vector2(0.124584936, 0.12239923)
+texture = ExtResource("2_gj0cs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=395884889]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_38t12")
+
+[node name="soldado" type="AnimatedSprite2D" parent="." unique_id=231197159]
+scale = Vector2(0.10211266, 0.10211268)
+sprite_frames = SubResource("SpriteFrames_38t12")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=219588165]
+position = Vector2(0, -40)
+offset = Vector2(0, -220)
+zoom = Vector2(0.8, 0.8)
+limit_left = 0
+limit_top = 0
+limit_right = 13312
+limit_bottom = 1200
+
+[node name="Agachado2" type="Sprite2D" parent="." unique_id=2083500548]
+visible = false
+position = Vector2(0, 6)
+scale = Vector2(0.047373403, 0.047373403)
+texture = ExtResource("5_1y5k2")
+
+[node name="Colission_agachado" type="CollisionShape2D" parent="." unique_id=1973211659]
+visible = false
+position = Vector2(-1, 16)
+scale = Vector2(0.047373414, 0.047373414)
+shape = SubResource("RectangleShape2D_35kqm")
+disabled = true
+
+[node name="Agachado" type="Marker2D" parent="." unique_id=432943711]
+visible = false
+position = Vector2(0, 15)
+
+[node name="Brazo_sostener" type="Sprite2D" parent="Agachado" unique_id=620123471]
+z_index = -1
+position = Vector2(16, 2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_35kqm")
+
+[node name="Arma" type="Sprite2D" parent="Agachado" unique_id=1325439268]
+position = Vector2(23, 1)
+scale = Vector2(0.124584936, 0.12239923)
+texture = ExtResource("2_gj0cs")
+flip_h = true
+
+[node name="Brazo_gatillo" type="Sprite2D" parent="Agachado" unique_id=1626951807]
+position = Vector2(1, 4)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_f8plh")
+
+[node name="Punto_disparo" type="Marker2D" parent="Agachado" unique_id=114897947]
+position = Vector2(50, 0)
